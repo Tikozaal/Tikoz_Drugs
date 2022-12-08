@@ -38,7 +38,7 @@ AddEventHandler('Tikoz:TraitementDrugs', function(name, item, need)
     else
         xPlayer.removeInventoryItem(need, 2)
         xPlayer.addInventoryItem(item, 1)
-        TriggerClientEvent('esx:showNotification', source, "Vous traité de la ~b~"..name)
+        TriggerClientEvent('esx:showNotification', source, "Tu traites de la ~b~"..name)
     end
 end)
 
