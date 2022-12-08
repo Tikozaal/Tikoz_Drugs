@@ -9,5 +9,5 @@ server_scripts({
 
 client_scripts({
     "dependencies/pmenu.lua",
-    "client/*.lua"
+    "client.lua"
 });
