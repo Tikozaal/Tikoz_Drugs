@@ -13,14 +13,16 @@ AddEventHandler('Tikoz:RecolteDrugs', function(name, item)
     local xPlayer = ESX.GetPlayerFromId(source)
     local iteminventaire = xPlayer.getInventoryItem(item).count
 
-    if iteminventaire >= 50 then
-        TriggerClientEvent('esx:showNotification', source, "Tu ne peux pas récolté plus de ~y~50~b~ "..name)
-        recolte = false
-    else
-        xPlayer.addInventoryItem(item, 1)
-        TriggerClientEvent('esx:showNotification', source, "Tu récoltes : ~b~"..name)
-		return
-    end
+	if item then
+	    if iteminventaire >= 50 then
+	        TriggerClientEvent('esx:showNotification', source, "Tu ne peux pas récolté plus de ~y~50~b~ "..name)
+	        recolte = false
+	    else
+	        xPlayer.addInventoryItem(item, 1)
+	        TriggerClientEvent('esx:showNotification', source, "Tu récoltes : ~b~"..name)
+			return
+	    end
+	end
 end)
 
 RegisterNetEvent('Tikoz:TraitementDrugs')
